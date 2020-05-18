@@ -1,0 +1,127 @@
+<div class="login-body">
+    <div class="login-panel ui-fluid">
+        <div class="login-panel-header">
+            <img
+                style="width: 120px;"
+                src="assets/layout/images/riaproLogo.png"
+            />
+        </div>
+        <div class="login-panel-content">
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <h1>Sign-in to RIA Pro</h1>
+                </div>
+
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="ui-g-12">
+                        <div class="md-inputfield form-group">
+                            <input
+                                type="text"
+                                pInputText
+                                formControlName="username"
+                            />
+                            <label>Username</label>
+                        </div>
+                        <div
+                            class="alert alert-danger"
+                            *ngIf="
+                                loginForm.get('username').touched &&
+                                loginForm.get('username').invalid
+                            "
+                        >
+                            <div
+                                *ngIf="
+                                    loginForm.get('username').errors.required
+                                "
+                            >
+                                Username is required
+                            </div>
+
+                            <div
+                                *ngIf="
+                                    loginForm.get('username').errors.minlength
+                                "
+                            >
+                                Username should be minimum of 3 characters
+                            </div>
+<!--                            <div-->
+<!--                                *ngIf="-->
+<!--                                    loginForm.get('username').errors-->
+<!--                                        .cannotContainSpace-->
+<!--                                "-->
+<!--                            >-->
+<!--                                Username cannot contain space-->
+<!--                            </div>-->
+                        </div>
+                        <!-- <div
+                            *ngIf="
+                                loginForm.get('username').errors.shouldBeUnique
+                            "
+                        >
+                            Username already taken
+                        </div> -->
+                    </div>
+                    <div class="ui-g-12">
+                        <div class="md-inputfield form-group">
+                            <input
+                                type="password"
+                                pInputText
+                                formControlName="password"
+                            />
+                            <label>Password</label>
+                        </div>
+                        <div
+                            class="alert alert-danger"
+                            *ngIf="
+                                loginForm.get('password').touched &&
+                                loginForm.get('password').invalid
+                            "
+                        >
+                            <div
+                                *ngIf="
+                                    loginForm.get('password').errors.required
+                                "
+                            >
+                                Password is required
+                            </div>
+
+                            <div
+                                *ngIf="
+                                    loginForm.get('password').errors.minlength
+                                "
+                            >
+                                Password should be minimum of 4 characters
+                            </div>
+                            <div
+                                *ngIf="
+                                    loginForm.get('password').errors
+                                        .cannotContainSpace
+                                "
+                            >
+                                Password cannot contain space
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="error-msg" *ngIf="serverError!=''">
+                    {{serverError}}
+                </div>
+
+                <div class="ui-g-12">
+                    <button
+                        pButton
+                        type="button"
+                        label="Sign In" (click)="login()"
+                        icon="ui-icon-person"
+                    ></button>
+                </div>
+                <div class="ui-g-12">
+                    <a href="/forgotpassword">Forgot Password?</a>
+                </div>
+                <div class="ui-g-12">
+                    Don't have an account? <a href="#">Sign Up</a> now.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
