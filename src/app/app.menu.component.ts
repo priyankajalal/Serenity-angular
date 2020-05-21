@@ -44,12 +44,33 @@ export class AppMenuComponent implements OnInit, AfterViewInit {
         this.model = [
             { label: "Dashboard", icon: "dashboard", routerLink: ["/"] },
             {
+                label: "RIAPro Dashboard",
+                icon: "dashboard",
+                routerLink: ["/dashboard"],
+            },
+            {
                 label: "Portfolio",
                 icon: "thumb-up",
                 routerLink: ["/portfolio"],
             },
             { label: "Login", icon: "thumb-up", routerLink: ["/login"] },
             { label: "Sign-Up", icon: "thumb-up", routerLink: ["/signUp"] },
+            {
+                label: "Research",
+                icon: "settings",
+                items: [
+                    {
+                        label: "News",
+                        icon: "view_quilt",
+                        routerLink: ["/news-rss"],
+                    },
+                    {
+                        label: "News Table",
+                        routerLink: ["/news-table"],
+                    },
+                ],
+            },
+
             {
                 label: "Menu Modes",
                 icon: "settings",

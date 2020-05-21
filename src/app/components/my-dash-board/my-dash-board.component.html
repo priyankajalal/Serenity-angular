@@ -1,0 +1,27 @@
+<div class="ui-g-12 ui-lg-12" style="padding-top: 0;">
+    <p-tabView>
+        <p-tabPanel header="My News">
+            <app-news-datatable
+                title=""
+                newsClass="news-medium"
+                [symbols]="portfolioSymbols"
+            ></app-news-datatable>
+        </p-tabPanel>
+        <p-tabPanel header="My Alerts">
+            <!-- <app-user-alert-history></app-user-alert-history> -->
+        </p-tabPanel>
+        <p-tabPanel header="Dividend">
+            <!-- <app-dividend-history
+              [symbol]="portfolioSymbols"
+              [fullDividendDetail]="fullDividendDetail"
+          ></app-dividend-history> -->
+        </p-tabPanel>
+
+        <p-tabPanel header="Earnings">
+            <!-- <app-earning-history
+              [symbol]="portfolioSymbols"
+              [fullEarningDetail]="fullEarningDetail"
+          ></app-earning-history> -->
+        </p-tabPanel>
+    </p-tabView>
+</div>

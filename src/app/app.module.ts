@@ -1,15 +1,15 @@
+import { SignUpComponent } from "./components/sign-up/sign-up.component";
 
 // Auth
-import { AuthGuard } from './_guards/index';
-import { JwtInterceptor } from './_helpers/index';
-import {  AuthenticationService } from './_services/index';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthGuard } from "./_guards/index";
+import { JwtInterceptor } from "./_helpers/index";
+import { AuthenticationService } from "./_services/index";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 // Services
-import { ChartService } from './services/chart.service';
-import { LiveService } from './services/live.service';
-import { NewsService } from './services/news.services';
-
+import { ChartService } from "./services/chart.service";
+import { LiveService } from "./services/live.service";
+import { NewsService } from "./services/news.services";
 
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -84,6 +84,7 @@ import { TreeModule } from "primeng/tree";
 import { TreeTableModule } from "primeng/treetable";
 import { VirtualScrollerModule } from "primeng/virtualscroller";
 
+
 import { AppComponent } from "./app.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppNotfoundComponent } from "./pages/app.notfound.component";
@@ -118,7 +119,9 @@ import { NodeService } from "./demo/service/nodeservice";
 
 import { BreadcrumbService } from "./breadcrumb.service";
 import { LoginComponent } from "./components/login/login.component";
-import { SignUpComponent } from "./components/sign-up/sign-up.component";
+import { NewsRssComponent } from "./components/news-rss/news-rss.component";
+import { NewsDatatableComponent } from "./components/news-datatable/news-datatable.component";
+import { MyDashBoardComponent } from './components/my-dash-board/my-dash-board.component';
 
 @NgModule({
     imports: [
@@ -224,6 +227,9 @@ import { SignUpComponent } from "./components/sign-up/sign-up.component";
         AppLoginComponent,
         LoginComponent,
         SignUpComponent,
+        NewsRssComponent,
+        NewsDatatableComponent,
+        MyDashBoardComponent,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
@@ -232,14 +238,15 @@ import { SignUpComponent } from "./components/sign-up/sign-up.component";
         AuthenticationService,
         LiveService,
         {
-        provide: HTTP_INTERCEPTORS,
-        useClass: JwtInterceptor,
-        multi: true
+            provide: HTTP_INTERCEPTORS,
+            useClass: JwtInterceptor,
+            multi: true,
         },
 
         CountryService,
         EventService,
         NodeService,
+        NewsService,
         BreadcrumbService,
     ],
     bootstrap: [AppComponent],

@@ -1,324 +1,527 @@
 <div class="ui-g ui-fluid">
-    <div class="ui-g-12 ui-lg-8">
-        <!-- Left Side -->
-        <div class="card card-w-title">
-            <h1>Sign Up</h1>
-            <div class="ui-g form-group">
-                <form [formGroup]="signUpForm" onSubmit="handleSubmit()">
-                    <div class="ui-g ui-g-6">
-                        <div class="ui-g-12">
-                            <div class="md-inputfield form-group">
-                                <input
-                                    type="text"
-                                    pInputText
-                                    formControlName="firstName"
-                                />
-                                <label>First Name</label>
-                            </div>
-                            <div
-                                class="alert alert-danger"
-                                *ngIf="
-                                    signUpForm.get('firstName').touched &&
-                                    signUpForm.get('firstName').invalid
-                                "
-                            >
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('firstName').errors
-                                            .required
-                                    "
-                                >
-                                    First Name is required
-                                </div>
+    <!-- <div class="ui-g-12"> -->
 
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('firstName').errors
-                                            .minlength
-                                    "
-                                >
-                                    First Name should be minimum of 2 characters
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="ui-g-12">
-                            <div class="md-inputfield form-group">
-                                <input
-                                    type="text"
-                                    pInputText
-                                    formControlName="lastName"
-                                />
-                                <label>Last Name</label>
-                            </div>
-                            <div
-                                class="alert alert-danger"
-                                *ngIf="
-                                    signUpForm.get('lastName').touched &&
-                                    signUpForm.get('lastName').invalid
-                                "
-                            >
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('lastName').errors
-                                            .required
-                                    "
-                                >
-                                    Last Name is required
-                                </div>
-
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('lastName').errors
-                                            .minlength
-                                    "
-                                >
-                                    Last Name should be minimum of 2 characters
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="ui-g-12">
-                            <div class="md-inputfield form-group">
-                                <input
-                                    type="text"
-                                    pInputText
-                                    formControlName="email"
-                                />
-                                <label>Email</label>
-                            </div>
-                            <div
-                                class="alert alert-danger"
-                                *ngIf="
-                                    signUpForm.get('email').touched &&
-                                    signUpForm.get('email').invalid
-                                "
-                            >
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('email').errors.required
-                                    "
-                                >
-                                    Email is required
-                                </div>
-
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('email').errors.pattern
-                                    "
-                                >
-                                    Enter valid email
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="ui-g-12">
-                            <div class="md-inputfield form-group">
-                                <input
-                                    type="text"
-                                    pInputText
-                                    formControlName="password"
-                                />
-                                <label>Password</label>
-                            </div>
-                            <div
-                                class="alert alert-danger"
-                                *ngIf="
-                                    signUpForm.get('password').touched &&
-                                    signUpForm.get('password').invalid
-                                "
-                            >
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('password').errors
-                                            .required
-                                    "
-                                >
-                                    Password is required
-                                </div>
-
-                                <div
-                                    *ngIf="
-                                        loginForm.get('password').errors
-                                            .minlength
-                                    "
-                                >
-                                    Password should be minimum of 4 characters
-                                </div>
-                                <div
-                                    *ngIf="
-                                        loginForm.get('password').errors
-                                            .cannotContainSpace
-                                    "
-                                >
-                                    Password cannot contain space
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ui-g ui-g-6">
-                        <div class="ui-g-12">
-                            <div class="md-inputfield form-group">
-                                <input
-                                    type="text"
-                                    pInputText
-                                    formControlName="firstName"
-                                />
-                                <label>First Name</label>
-                            </div>
-                            <div
-                                class="alert alert-danger"
-                                *ngIf="
-                                    signUpForm.get('firstName').touched &&
-                                    signUpForm.get('firstName').invalid
-                                "
-                            >
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('firstName').errors
-                                            .required
-                                    "
-                                >
-                                    First Name is required
-                                </div>
-
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('firstName').errors
-                                            .minlength
-                                    "
-                                >
-                                    First Name should be minimum of 2 characters
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="ui-g-12">
-                            <div class="md-inputfield form-group">
-                                <input
-                                    type="text"
-                                    pInputText
-                                    formControlName="lastName"
-                                />
-                                <label>Last Name</label>
-                            </div>
-                            <div
-                                class="alert alert-danger"
-                                *ngIf="
-                                    signUpForm.get('lastName').touched &&
-                                    signUpForm.get('lastName').invalid
-                                "
-                            >
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('lastName').errors
-                                            .required
-                                    "
-                                >
-                                    Last Name is required
-                                </div>
-
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('lastName').errors
-                                            .minlength
-                                    "
-                                >
-                                    Last Name should be minimum of 2 characters
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="ui-g-12">
-                            <div class="md-inputfield form-group">
-                                <input
-                                    type="text"
-                                    pInputText
-                                    formControlName="email"
-                                />
-                                <label>Email</label>
-                            </div>
-                            <div
-                                class="alert alert-danger"
-                                *ngIf="
-                                    signUpForm.get('email').touched &&
-                                    signUpForm.get('email').invalid
-                                "
-                            >
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('email').errors.required
-                                    "
-                                >
-                                    Email is required
-                                </div>
-
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('email').errors.pattern
-                                    "
-                                >
-                                    Enter valid email
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="ui-g-12">
-                            <div class="md-inputfield form-group">
-                                <input
-                                    type="text"
-                                    pInputText
-                                    formControlName="password"
-                                />
-                                <label>Password</label>
-                            </div>
-                            <div
-                                class="alert alert-danger"
-                                *ngIf="
-                                    signUpForm.get('password').touched &&
-                                    signUpForm.get('password').invalid
-                                "
-                            >
-                                <div
-                                    *ngIf="
-                                        signUpForm.get('password').errors
-                                            .required
-                                    "
-                                >
-                                    Password is required
-                                </div>
-
-                                <div
-                                    *ngIf="
-                                        loginForm.get('password').errors
-                                            .minlength
-                                    "
-                                >
-                                    Password should be minimum of 4 characters
-                                </div>
-                                <div
-                                    *ngIf="
-                                        loginForm.get('password').errors
-                                            .cannotContainSpace
-                                    "
-                                >
-                                    Password cannot contain space
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+    <div class="register-form">
+        <div style="margin-left: 40%;">
+            <div>
+                <img
+                    src="../../../assets/images/30-Day-Free-Trial-Seal.png"
+                    style="max-width: 15%; margin-left: 10%;"
+                />
             </div>
-        </div>
+            <div style="display: inline-block;">
+                <h3
+                    class="register"
+                    style="text-align: center; margin-left: 42px;"
+                >
+                    Subscribe to RIA Pro
+                </h3>
+            </div>
 
-        <!-- <div class="ui-g-12">
-                <button
-                    pButton
-                    type="button"
-                    label="Sign In"
-                    icon="ui-icon-person"
-                ></button>
-            </div> -->
+            <h3
+                *ngIf="stripeMessage != ''"
+                class="error-msg"
+                style="text-align: center;"
+            >
+                {{ stripeMessage }}
+            </h3>
+        </div>
+        <div class="card shadow-box ui-shadow-5 ui-g-12 ui-md-10 ui-g-offset-1">
+            <form #userForm="ngForm" class="signUp">
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-lg-6">
+                        <div class="form-group ui-g">
+                            <div class="ui-g-3 ui-lg-3">
+                                <label for="firstName">First Name</label>
+                            </div>
+                            <div class="ui-g-9 ui-lg-9">
+                                <input
+                                    type="text"
+                                    class="form-control ui-inputtext"
+                                    id="firstName"
+                                    required
+                                    minlength="1"
+                                    [(ngModel)]="user.firstName"
+                                    name="firstName"
+                                    #firstName="ngModel"
+                                />
+                                <div
+                                    *ngIf="
+                                        firstName.invalid &&
+                                        (firstName.dirty || firstName.touched)
+                                    "
+                                    class="error-msg"
+                                >
+                                    <div *ngIf="firstName.errors.required">
+                                        Name is required.
+                                    </div>
+                                    <div *ngIf="firstName.errors.minlength">
+                                        Name must be at least 1 characters long.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ui-g">
+                            <div class="ui-g-3 ui-lg-3">
+                                <label for="lastName">Last Name</label>
+                            </div>
+                            <div class="ui-g-9 ui-lg-9">
+                                <input
+                                    type="text"
+                                    class="form-control ui-inputtext"
+                                    id="lastName"
+                                    required
+                                    minlength="1"
+                                    [(ngModel)]="user.lastName"
+                                    name="lastName"
+                                    #lastName="ngModel"
+                                />
+
+                                <div
+                                    *ngIf="
+                                        lastName.invalid &&
+                                        (lastName.dirty || lastName.touched)
+                                    "
+                                    class="error-msg"
+                                >
+                                    <div *ngIf="lastName?.required">
+                                        Last Name is required.
+                                    </div>
+
+                                    <div *ngIf="lastName?.errors.minlength">
+                                        Last Name must be at least 1 characters
+                                        long.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ui-g">
+                            <div class="ui-lg-3 ui-g-3">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="ui-lg-9 ui-g-9">
+                                <input
+                                    name="email"
+                                    class="form-control ui-inputtext"
+                                    [(ngModel)]="user.email"
+                                    required
+                                    [pattern]="emailPattern"
+                                    #email="ngModel"
+                                    id="email"
+                                />
+
+                                <div
+                                    *ngIf="
+                                        email.errors &&
+                                        (email.dirty || email.touched)
+                                    "
+                                >
+                                    <div
+                                        *ngIf="email?.errors.required"
+                                        class="error-msg"
+                                    >
+                                        Email required.
+                                    </div>
+                                    <div
+                                        *ngIf="email?.errors.pattern"
+                                        class="error-msg"
+                                    >
+                                        Email not valid.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ui-g">
+                            <div class="ui-lg-3 ui-g-3">
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="ui-lg-9 ui-g-9">
+                                <input
+                                    type="password"
+                                    class="form-control ui-inputtext"
+                                    id="password"
+                                    required
+                                    minlength="5"
+                                    [(ngModel)]="user.password"
+                                    name="password"
+                                    #password="ngModel"
+                                    maxlength="10"
+                                />
+
+                                <div
+                                    *ngIf="
+                                        password.invalid &&
+                                        (password.dirty || password.touched)
+                                    "
+                                    class="error-msg"
+                                >
+                                    <div *ngIf="password?.errors.required">
+                                        Password is required.
+                                    </div>
+
+                                    <div *ngIf="password?.errors.minlength">
+                                        Password must be minimum of 5
+                                        characters.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ui-g">
+                            <div class="ui-g-3">
+                                <label for="subscription"
+                                    >Subscription Type</label
+                                >
+                                <button
+                                    (click)="showPlanDetails()"
+                                    style="
+                                        cursor: pointer;
+                                        color: black;
+                                        background: #ffc906;
+                                        border-radius: 50%;
+                                        border: 1px solid grey;
+                                        margin-left: 3px;
+                                    "
+                                >
+                                    ?
+                                </button>
+                            </div>
+                            <div class="ui-g-9">
+                                <p-dropdown
+                                    placeholder="---  Select  ---"
+                                    [options]="subscriptionType"
+                                    [(ngModel)]="user.subscription"
+                                    optionLabel="name"
+                                    name="subscription"
+                                ></p-dropdown>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-g-12 ui-lg-6">
+                        <div class="form-group ui-g">
+                            <div class="ui-g-3 ui-lg-3">
+                                <label for="promoCode">Promo Code</label>
+                            </div>
+                            <div class="ui-g-9 ui-lg-9">
+                                <input
+                                    size="10"
+                                    type="text"
+                                    class="form-control ui-inputtext"
+                                    id="promoCode"
+                                    minlength="1"
+                                    [(ngModel)]="user.promoCode"
+                                    name="promoCode"
+                                    #promoCode="ngModel"
+                                />
+                                <div
+                                    *ngIf="promoCode.invalid && promoCode.dirty"
+                                    class="error-msg"
+                                >
+                                    <div *ngIf="promoCode?.errors.minlength">
+                                        Promo code must be at least 1 characters
+                                        long.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ui-g">
+                            <div class="ui-g-3 ui-lg-3">
+                                <label for="nameOnCard">Name On Card</label>
+                            </div>
+                            <div class="ui-g-9 ui-lg-9">
+                                <input
+                                    type="text"
+                                    class="form-control ui-inputtext"
+                                    id="nameOnCard"
+                                    required
+                                    minlength="2"
+                                    [(ngModel)]="user.nameOnCard"
+                                    name="nameOnCard"
+                                    #nameOnCard="ngModel"
+                                />
+
+                                <div
+                                    *ngIf="
+                                        nameOnCard.invalid &&
+                                        (nameOnCard.dirty || nameOnCard.touched)
+                                    "
+                                    class="error-msg"
+                                >
+                                    <div *ngIf="nameOnCard?.errors.required">
+                                        Name is required.
+                                    </div>
+
+                                    <div *ngIf="nameOnCard?.errors.minlength">
+                                        Name must be at least 2 characters long.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ui-g">
+                            <div class="ui-g-3 ui-lg-3">
+                                <label for="cardType">Card Type</label>
+                            </div>
+                            <div class="ui-g-9 ui-lg-9">
+                                <p-dropdown
+                                    placeholder="---  Select  ---"
+                                    [options]="creditCards"
+                                    [(ngModel)]="user.cardType"
+                                    optionLabel="name"
+                                    name="creditCard"
+                                ></p-dropdown>
+                                <!-- <select
+                                    class="form-control"
+                                    id="cardType"
+                                    required
+                                    [(ngModel)]="user.cardType"
+                                    name="cardType"
+                                    #cardType="ngModel"
+                                >
+                                    <option
+                                        *ngFor="let card of creditCards"
+                                        [value]="card"
+                                        >{{ card }}</option
+                                    >
+                                </select> -->
+
+                                <div
+                                    *ngIf="
+                                        cardType?.errors &&
+                                        (cardType.dirty || cardType.touched)
+                                    "
+                                >
+                                    <div
+                                        *ngIf="cardType?.errors.required"
+                                        class="error-msg"
+                                    >
+                                        Please select a Card.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ui-g">
+                            <div class="ui-g-3 ui-lg-3">
+                                <label for="cardNumber">Card Number</label>
+                            </div>
+                            <div class="ui-g-9 ui-lg-9">
+                                <input
+                                    type="text"
+                                    class="form-control ui-inputtext"
+                                    id="cardNumber"
+                                    required
+                                    minlength="4"
+                                    [(ngModel)]="user.cardNumber"
+                                    name="cardNumber"
+                                    #cardNumber="ngModel"
+                                />
+
+                                <div
+                                    *ngIf="
+                                        cardNumber.invalid &&
+                                        (cardNumber.dirty || cardNumber.touched)
+                                    "
+                                    class="error-msg"
+                                >
+                                    <div *ngIf="cardNumber?.errors.required">
+                                        Card number is required.
+                                    </div>
+                                    <div *ngIf="cardNumber?.errors.minlength">
+                                        Enter valid card number.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ui-g">
+                            <div class="ui-g-3 ui-lg-3">
+                                <label for="expMonth">Exp Month / Year</label>
+                            </div>
+                            <div class="ui-g-2 ui-lg-2">
+                                <p-dropdown
+                                    [options]="expMonths"
+                                    [(ngModel)]="user.expMonth"
+                                    optionLabel="month"
+                                    name="expMonths"
+                                ></p-dropdown>
+
+                                <!-- <select
+                                    class="form-control"
+                                    id="expMonth"
+                                    required
+                                    [(ngModel)]="user.expMonth"
+                                    name="expMonth"
+                                    #expMonth="ngModel"
+                                >
+                                    <option
+                                        *ngFor="let month of expMonths"
+                                        [value]="month"
+                                        >{{ month }}</option
+                                    >
+                                </select> -->
+                                <div
+                                    *ngIf="
+                                        expMonth?.errors &&
+                                        (expMonth.dirty || expMonth.touched)
+                                    "
+                                >
+                                    <div
+                                        *ngIf="expMonth?.errors.required"
+                                        class="error-msg"
+                                    >
+                                        Expiration Month required.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui-g-3 ui-lg-3">
+                                <p-dropdown
+                                    [options]="expYears"
+                                    [(ngModel)]="user.expYear"
+                                    name="expYears"
+                                    optionLabel="year"
+                                ></p-dropdown>
+                                <!-- <select
+                                    class="form-control"
+                                    id="expYear"
+                                    required
+                                    [(ngModel)]="user.expYear"
+                                    name="expYear"
+                                    #expYear="ngModel"
+                                >
+                                    <option
+                                        *ngFor="let year of expYears"
+                                        [value]="year"
+                                        >{{ year }}</option
+                                    >
+                                </select> -->
+                                <div
+                                    *ngIf="
+                                        expYear?.errors &&
+                                        (expYear.dirty || expYear.touched)
+                                    "
+                                >
+                                    <div
+                                        *ngIf="expYear?.errors.required"
+                                        class="error-msg"
+                                    >
+                                        Expiration Year required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-g-1 ui-lg-1">
+                                <label for="cvc">CVC</label>
+                            </div>
+                            <div class="ui-g-2 ui-lg-2">
+                                <input
+                                    type="text"
+                                    class="form-control ui-inputtext"
+                                    id="cvc"
+                                    required
+                                    minlength="2"
+                                    [(ngModel)]="user.cvc"
+                                    name="cvc"
+                                    #cvc="ngModel"
+                                />
+
+                                <div
+                                    *ngIf="cvc?.invalid && cvc?.dirty"
+                                    class="error-msg"
+                                >
+                                    <div *ngIf="cvc?.errors.minlength">
+                                        CVC code must have at least 2
+                                        characters.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div id="agreement">
+                        <table>
+                            <tr>
+                                <td>
+                                    <!-- <input
+                                        type="checkbox"
+                                        [(ngModel)]="agreementSigned"
+                                        name="agreementSigned"
+                                    /> -->
+                                    <p-checkbox
+                                        name="agreementSigned"
+                                        [(ngModel)]="agreementSigned"
+                                    ></p-checkbox>
+                                </td>
+                                <td style="font-size: 13px;">
+                                    You must read and agree to our
+                                    <a href="/agreement" target="_blank"
+                                        >Subscriber Agreement </a
+                                    >to become a subscriber to riapro.net for
+                                    all subscriptions. Please note that your
+                                    subscription will renew automatically unless
+                                    you cancel prior to renewal.
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div
+                        style="
+                            margin-left: 40%;
+                            margin-right: 10%;
+                            margin-top: 2%;
+                        "
+                    >
+                        <span style="margin-left: 45px;">
+                            <button
+                                [disabled]="
+                                    !(userForm.form.valid && agreementSigned) ||
+                                    loading
+                                "
+                                (click)="register()"
+                                class="form-control ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only blue-btn"
+                            >
+                                Submit
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
+
+    <p-dialog
+        header="Subscription Plan Details"
+        [(visible)]="displayDialog"
+        [responsive]="true"
+        showEffect="fade"
+        [modal]="true"
+        height="400"
+        width="400"
+    >
+        <h3>RiaPro Subscription Plans</h3>
+        <ul>
+            <li>$29.95 Monthly (1 month Free Trial)</li>
+            <li>
+                $329.45 Annual (Pay For Only 11-Months PLUS a 2-Week Free Trial)
+            </li>
+            <li>$2,999.00 / Lifetime (Only 100 available)</li>
+        </ul>
+        <h4 style="color: blue;">
+            You will not be charged until your Free Trial Period ends
+        </h4>
+        <h3>The lifetime memberships provide users with:</h3>
+        <p>
+            Full access to RIA Pro for life regardless of price increases and
+            premium enhancements Direct access to the PRO’s for specific
+            questions and/or thoughts. Same day notifications on all portfolio
+            changes in the models A discount on asset management and financial
+            planning services. Consultations, Webinars and Special Updates
+        </p>
+    </p-dialog>
 </div>

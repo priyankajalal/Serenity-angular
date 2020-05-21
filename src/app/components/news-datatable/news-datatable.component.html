@@ -1,0 +1,118 @@
+
+<p-table #dt [columns]="cols" [value]="news" selectionMode="single"
+         [paginator]="true" [rows]="10" [responsive]="true"
+         [globalFilterFields]="['symbol','title']">
+    <ng-template pTemplate="caption">
+        List of News
+        <div class="ui-table-globalfilter-container">
+            <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Global Search" />
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="symbol">Symbol <p-sortIcon field="symbol"></p-sortIcon></th>
+            <th>Link</th>
+            <th>Date</th>
+            <th>title</th>
+        </tr>
+        <tr>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'symbol', 'startsWith')" placeholder="Search by symbol" class="ui-column-filter">
+            </th>
+            <th>
+
+            </th>
+
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+        <tr>
+            <td>{{item.symbol}}</td>
+
+            <td>{{item.link}}</td>
+            <td>{{item.time}}</td>
+            <td>{{item.title}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<!--<p-table [columns]="cols" [value]="news" selectionMode="single"-->
+<!--         [paginator]="true" [rows]="10" [responsive]="true" >-->
+<!--    <ng-template pTemplate="caption">-->
+<!--        My News-->
+<!--    </ng-template>-->
+<!--    <ng-template pTemplate="header">-->
+<!--        <tr>-->
+<!--            <th  [pSortableColumn]="symbol">-->
+<!--                {{col.symbol}}-->
+<!--                <p-sortIcon [field]="symvol"></p-sortIcon>-->
+<!--            </th>-->
+<!--        </tr>-->
+<!--    </ng-template>-->
+<!--    <ng-template pTemplate="body">-->
+<!--        <tr [pSelectableRow]="rowData">-->
+<!--            <td *ngFor="let col of columns">-->
+<!--                {{rowData[col.field]}}-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    </ng-template>-->
+<!--</p-table>-->
+
+<!--
+
+
+    <div [class]="newsClass">
+        <p-dataTable
+            #dt
+            [value]="news"
+            [paginator]="false"
+            [rows]="100"
+            [responsive]="true"
+            [reorderableColumns]="true"
+            [scrollable]="false"
+        >
+            <p-column
+                field="symbol"
+                header="Symbol"
+                [sortable]="true"
+                [filter]="true"
+                [style]="{ width: '100px' }"
+            >
+                <ng-template let-col let-item="rowData" pTemplate="body">
+                    <div class="symbol center">
+                        {{ item.symbol }}
+                    </div>
+                </ng-template>
+            </p-column>
+
+            <p-column field="link" header="Link" [sortable]="true">
+                <ng-template let-col let-item="rowData" pTemplate="body">
+                    <div class="center">
+                        <a href="{{ item.link }}" target="_blank">{{
+                            item.title
+                        }}</a>
+                    </div>
+                </ng-template>
+            </p-column>
+            <p-column
+                field="date_raw"
+                header="Date"
+                [sortable]="true"
+                [style]="{ width: '110px' }"
+            >
+                <ng-template let-col let-item="rowData" pTemplate="body">
+                    <div class="center small">
+                        {{ item.time }}
+                    </div>
+                </ng-template>
+            </p-column>
+        </p-dataTable>
+    </div>
+-->

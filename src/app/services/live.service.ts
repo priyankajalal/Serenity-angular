@@ -1,89 +1,80 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-
-
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "../../environments/environment";
 
 @Injectable()
-
 export class LiveService {
+    constructor(private http: HttpClient) {}
 
-
-  constructor (
-    private http: HttpClient
-  ) {}
-
-    getWatchList(watchListId){
-        return this.http.get(environment.baseUrl+'/watchlist/'+watchListId);
+    getWatchList(watchListId) {
+        return this.http.get(environment.baseUrl + "/watchlist/" + watchListId);
     }
 
-
-
-    getTechnicals(symbols){
-       return this.http.get(environment.baseUrl+'/symbol/technical/'+symbols.join(","));
-
+    getTechnicals(symbols) {
+        return this.http.get(
+            environment.baseUrl + "/symbol/technical/" + symbols.join(",")
+        );
     }
 
-    getDetailNews(){
-           return this.http.get(environment.baseUrl+'/newsDetail/');
-
-        }
-
-    get(marketType){
-            return this.http.get(environment.baseUrl+'/broadMarket/'+marketType);
-        }
-
-    getNotableMoves(){
-           return this.http.get(environment.baseUrl+'/notablemoves');
+    getDetailNews() {
+        return this.http.get(environment.baseUrl + "/newsDetail/");
     }
 
-    getNotableMoveSymbols(typeid){
-            return this.http.get(environment.baseUrl+'/notablemoves/'+typeid);
+    get(marketType) {
+        return this.http.get(
+            environment.baseUrl + "/broadMarket/" + marketType
+        );
     }
 
-    getSectorsPercentages(symbols){
-            return this.http.get(environment.baseUrl+'/sectors/'+symbols.join(","));
+    getNotableMoves() {
+        return this.http.get(environment.baseUrl + "/notablemoves");
     }
 
-
-    getSymbolsHistorical(symbols){
-             return this.http.get(environment.baseUrl+'/symbol/technical/history/'+symbols.join(","));
+    getNotableMoveSymbols(typeid) {
+        return this.http.get(environment.baseUrl + "/notablemoves/" + typeid);
     }
 
-    getSynopsis(symbol){
-              return this.http.get(environment.baseUrl+'/symbol/synopsis/'+symbol);
+    getSectorsPercentages(symbols) {
+        return this.http.get(
+            environment.baseUrl + "/sectors/" + symbols.join(",")
+        );
     }
 
-    getMulticharts(){
-              return this.http.get(environment.baseUrl+'/multicharts');
+    getSymbolsHistorical(symbols) {
+        return this.http.get(
+            environment.baseUrl +
+                "/symbol/technical/history/" +
+                symbols.join(",")
+        );
     }
 
+    getSynopsis(symbol) {
+        return this.http.get(
+            environment.baseUrl + "/symbol/synopsis/" + symbol
+        );
+    }
 
+    getMulticharts() {
+        return this.http.get(environment.baseUrl + "/multicharts");
+    }
 
-    getSectorIndustryMapping(){
-                 return this.http.get(environment.baseUrl+'/sector/industryMapping');
+    getSectorIndustryMapping() {
+        return this.http.get(environment.baseUrl + "/sector/industryMapping");
+    }
 
-        }
+    getHeatMapByType(typeid) {
+        return this.http.get(environment.baseUrl + "/heatmap/" + typeid);
+    }
+    getUrlData(url) {
+        return this.http.get(environment.baseUrl + url);
+    }
 
-    getHeatMapByType(typeid){
-                     return this.http.get(environment.baseUrl+'/heatmap/'+typeid);
-
-            }
-    getUrlData(url){
-                         return this.http.get(environment.baseUrl+url);
-      }
-
-    postRequest(url,postData) {
+    postRequest(url, postData) {
         let bodyString = JSON.stringify(postData);
-         return this.http.post(environment.baseUrl+url,bodyString);
-      }
+        return this.http.post(environment.baseUrl + url, bodyString);
+    }
 
-  getDataInArray(url) {
-    return this.http.get(environment.baseUrl+url)
-      .map(res => res || []);
-  }
-
-
+    getDataInArray(url) {
+        return this.http.get(environment.baseUrl + url).map((res) => res || []);
+    }
 }
-
-

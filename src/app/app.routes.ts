@@ -1,3 +1,4 @@
+import { MyDashBoardComponent } from "./components/my-dash-board/my-dash-board.component";
 import { SignUpComponent } from "./components/sign-up/sign-up.component";
 import { LoginComponent } from "./components/login/login.component";
 import { Routes, RouterModule } from "@angular/router";
@@ -21,10 +22,11 @@ import { AppNotfoundComponent } from "./pages/app.notfound.component";
 import { AppErrorComponent } from "./pages/app.error.component";
 import { AppAccessdeniedComponent } from "./pages/app.accessdenied.component";
 import { AppLoginComponent } from "./pages/app.login.component";
+import { NewsRssComponent } from "./components/news-rss/news-rss.component";
+import { NewsDatatableComponent } from "./components/news-datatable/news-datatable.component";
 
 export const routes: Routes = [
     {
-
         path: "",
         component: AppMainComponent,
         children: [
@@ -47,10 +49,12 @@ export const routes: Routes = [
     { path: "error", component: AppErrorComponent },
     { path: "accessdenied", component: AppAccessdeniedComponent },
     { path: "404", component: AppNotfoundComponent },
-    // {path: 'login', component: AppLoginComponent},
+    { path: "dashboard", component: MyDashBoardComponent },
     { path: "login", component: LoginComponent },
-    { path: "signUp", component: SignUpComponent }
-   // ,{ path: "**", redirectTo: "/404" },
+    { path: "signUp", component: SignUpComponent },
+    { path: "news-rss", component: NewsRssComponent },
+    { path: "news-table", component: NewsDatatableComponent },
+    // ,{ path: "**", redirectTo: "/404" },
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes, {

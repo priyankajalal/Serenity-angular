@@ -1,0 +1,22 @@
+<div class="ui-g ui-fluid">
+    <p-tabView>
+        <p-tabPanel *ngFor="let row of newsData" [header]="row.source">
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tbody class="newsBody">
+                    <tr *ngFor="let news of row.value">
+                        <td class="newsBorder">
+                            <h1>{{ news.title }}</h1>
+                            <h4>{{ news.pubDate }}</h4>
+                            <div [innerHtml]="news.description"></div>
+                            <div class="read-more">
+                                <a [href]="news.link" target="_blank"
+                                    >Read more</a
+                                >
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </p-tabPanel>
+    </p-tabView>
+</div>
